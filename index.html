@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>KrizzyOS</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Desktop -->
+    <div class="desktop">
+
+        <div class="icon" onclick="openWindow('terminal')">
+            💻
+            <span>Terminal</span>
+        </div>
+
+        <div class="icon" onclick="openWindow('calculator')">
+            🧮
+            <span>Calculator</span>
+        </div>
+
+        <div class="icon" onclick="openWindow('files')">
+            📁
+            <span>Files</span>
+        </div>
+
+    </div>
+
+    <!-- Terminal Window -->
+    <div id="terminal" class="window">
+        <div class="titlebar">
+            Terminal
+            <button onclick="closeWindow('terminal')">X</button>
+        </div>
+
+        <div class="content">
+            <p>KrizzyOS Terminal v1.0</p>
+
+            <input
+                type="text"
+                id="terminalInput"
+                placeholder="Type command..."
+                onkeydown="runCommand(event)"
+            >
+
+            <div id="terminalOutput"></div>
+        </div>
+    </div>
+
+    <!-- Calculator Window -->
+    <div id="calculator" class="window">
+        <div class="titlebar">
+            Calculator
+            <button onclick="closeWindow('calculator')">X</button>
+        </div>
+
+        <div class="content">
+            <input type="number" id="num1" placeholder="Number 1">
+            <input type="number" id="num2" placeholder="Number 2">
+
+            <button onclick="addNumbers()">Add</button>
+
+            <p id="calcResult"></p>
+        </div>
+    </div>
+
+    <!-- File Explorer -->
+    <div id="files" class="window">
+        <div class="titlebar">
+            File Explorer
+            <button onclick="closeWindow('files')">X</button>
+        </div>
+
+        <div class="content">
+            <ul>
+                <li>📄 notes.txt</li>
+                <li>📄 homework.doc</li>
+                <li>🖼 wallpaper.png</li>
+                <li>🎵 music.mp3</li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- Taskbar -->
+    <div class="taskbar">
+        <div class="start">KrizzyOS</div>
+        <div class="clock" id="clock"></div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
